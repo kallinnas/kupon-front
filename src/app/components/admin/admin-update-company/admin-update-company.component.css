@@ -1,0 +1,60 @@
+h1 {
+  margin-left: 450px;
+}
+
+form {
+  display: table;
+  width: 100%;
+  opacity: 0.7;
+}
+
+label{
+  width:190px;
+  clear:left;
+  text-align:right;
+  padding-right:10px;
+  float:left;
+  margin-top: 15px;
+}
+
+span{
+  display: table-cell;
+  padding: 0 4px 0 6px;
+}
+
+input{
+  float:left;
+  width: 300%;
+}
+
+.menu-box {
+  height: 250px;
+}
+
+.menu-box input {
+  display: inline;
+  padding: 12px;
+  margin: 4px;
+  border-radius: 4px;
+  font-size: 15px;
+  background: #D0CBAA;
+  color: #454547;
+  opacity: 0.7;
+}
+
+button {
+  display: inline;
+  background: #709CA5;
+  margin: 2px;
+  position: relative;
+  left: 400px;
+  text-align: center;
+  border: 2px solid lightblue;
+  padding: 12px 30px;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: white;
+  border-radius: 40px;
+  transition: 0.25s;
+  opacity: 0.7;
+}

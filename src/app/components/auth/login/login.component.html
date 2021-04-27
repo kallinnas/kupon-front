@@ -1,0 +1,18 @@
+<div class="root">
+
+  <div class="dws-form">
+    <form action="" class="tab-form" id="form">
+      <h1>Login</h1>
+      <br>
+      <label>
+        <input type="text" placeholder="user name..." [(ngModel)]="email" name="email">
+        <input type="text" placeholder="password..." [(ngModel)]="password" name="password">
+      </label>
+
+      <br>
+      <button href="/home" (click)="login()">LogIn</button>
+      <button (click)="register();">New account</button>
+
+    </form>
+  </div>
+</div>

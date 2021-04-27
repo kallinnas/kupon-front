@@ -1,0 +1,22 @@
+<form class="menu-box">
+
+  <div>
+    <h1> {{company.name}} </h1>
+    <label>Update Company Name:</label>
+    <span>
+      <input type="text" [placeholder]="company.name" [(ngModel)]="company.name" name="name">
+    </span>
+  </div>
+
+  <div>
+    <label>Update Company Logo: </label>
+    <span>
+      <input type="text" [placeholder]="company.imageURL" [(ngModel)]="company.imageURL" name="logo">
+    </span>
+  </div>
+
+  <button routerLink="/company-account" (click)="updateCompany()">Update</button>
+
+  <button routerLink="/company-account">Back</button>
+
+</form>

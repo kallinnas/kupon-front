@@ -1,0 +1,81 @@
+div {
+  height: 90%;
+  overflow: auto;
+}
+
+table{
+  width: 700px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  border-collapse: collapse;
+  background-color: #6fbbd3;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .4);
+}
+
+th {
+  color: #353535;
+  background-color: #f08c88;
+  text-transform: uppercase;
+  font-size: 15px;
+  padding: 12px;
+}
+
+td{
+  font-size: 15px;
+  color: rgba(78, 80, 109, 0.96);
+}
+
+img{
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+}
+
+i{
+  font-size:30px; color:lightblue
+}
+
+.str {
+  border-top: 1px solid rgb(21, 64, 73);
+}
+
+.str:hover {
+  background-color: rgb(1, 132, 173);
+}
+
+.button {
+  background-color: rgb(222, 241, 245);
+  border: none;
+  color: rgb(21, 64, 73);
+  padding: 5px 5px;
+  text-align: center;
+  font-size: 10px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.button:hover {
+  opacity: 1
+}
+
+.up {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  color: rgb(131, 121, 117);
+  font-family: inherit;
+  text-transform: uppercase;
+  justify-content: center;
+  text-decoration: none;
+  margin: 10px;
+  padding: 2px;
+}
+
+button {
+  background: none;
+  border: none;
+}

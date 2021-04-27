@@ -1,0 +1,23 @@
+<h3 class="greeting">Welcome to your account,</h3>
+<h3 class="cName">{{customer.firstName}}</h3>
+<h3 class="cLastN">{{customer.lastName}}</h3>
+
+<a class="cart" routerLink="/cart">My Cart</a>
+<a class="coupon" routerLink="/customer-account">My Kupons</a>
+<a class="up" routerLink="/customer-update">Update My name</a>
+<button class="delC" (click)="deleteCustomer()" routerLink="logout">
+  Delete myself</button>
+
+<form class="menu-box ">
+
+  <input class="form" type="text"
+         [placeholder]="customer.firstName" [(ngModel)]="customer.firstName" name="firstName">
+
+  <input class="form" type="text" placeholder="Last Name..." [(ngModel)]="customer.lastName"
+         name="lastName">
+
+  <button class="upButton" (click)="updateCustomer()"
+          routerLink="/customer-account">Update ME
+  </button>
+
+</form>

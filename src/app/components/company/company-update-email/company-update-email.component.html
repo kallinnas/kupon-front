@@ -1,0 +1,22 @@
+<form class="menu-box">
+
+  <h1> Change email for {{company.name}} </h1>
+
+  <div class="container">
+    <label>Enter your password: </label>
+    <span>
+      <input type="password" placeholder="Password..." [(ngModel)]="password" name="pswd">
+    </span>
+    <button (click)="confirmPassword()">Confirm</button>
+  </div>
+
+  <div class="container" *ngIf="confirm == true">
+    <label>Enter new email: </label>
+    <span>
+      <input type="email" placeholder="New email..." [(ngModel)]="email" name="email">
+    </span>
+      <button routerLink="/company-account" (click)="updateEmail()">Update</button>
+  </div>
+
+
+</form>

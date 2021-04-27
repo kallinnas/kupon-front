@@ -1,0 +1,36 @@
+<!-- <h3>№{{customer?.id}} Welcome {{customer?.firstName}} {{customer?.lastName}}</h3> -->
+
+<img class="img" src="assets/images/customer.jpg" style=" width: 100px;">
+
+<div *ngIf="coupons" class="cus">
+
+  <table>
+    <tr class="main">
+      <th>ID</th>
+      <th>Title</th>
+      <th>StartDate</th>
+      <th>EndDate</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Image</th>
+    </tr>
+
+    <tr *ngFor="let coupon of coupons" class="str">
+      <td><a routerLink="/coupon-details/{{coupon.id}}">
+        {{coupon.id}}</a></td>
+      <td>{{coupon.title}}</td>
+      <td>{{coupon.startDate}}</td>
+      <td>{{coupon.endDate}}</td>
+      <td> <a routerLink="/coupon-category/{{coupon.category}}">{{coupon.category}}</a></td>
+      <td>{{coupon.amount}}</td>
+      <td>{{coupon.price}}</td>
+      <td>{{coupon.description}}</td>
+      <td>
+        <img src="{{coupon.imageURL}}" width=80px; height="80px">
+      </td>
+    </tr>
+  </table>
+
+</div>

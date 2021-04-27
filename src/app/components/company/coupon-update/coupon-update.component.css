@@ -1,0 +1,92 @@
+h2 {
+  font-family: inherit;
+  text-transform: uppercase;
+  color: rgb(15, 73, 39);
+  font-size: 14px;
+  text-align: center;
+  width: 78%;
+  margin-bottom: 15px;
+}
+
+form {
+  left      : 50%;
+  top       : 50%;
+  position  : absolute;
+  transform : translate(-50%, -50%);
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 5px;
+  flex-wrap: wrap;
+  background-size: cover;
+  opacity: 0.7;
+  border-radius: 5px;
+  width: 420px;
+  color: #454547;
+
+}
+
+input {
+  padding: 12px 40px;
+  margin: 1px 0;
+  display: inline-block;
+  border-radius: 4px;
+  background: #D0CBAA;
+  color: #454547;
+  opacity: 0.7;
+  text-decoration: none;
+  font-family: inherit;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+span {
+  color: red;
+}
+
+button {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  margin-top: 20px;
+  background: #709CA5;
+  display: block;
+  text-align: center;
+  padding: 14px 40px;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 14px;
+  /* text inside color */
+  outline: none;
+  color: white;
+  border-radius: 2px;
+  transition: 0.25s;
+}
+
+button:hover {
+  background: rgb(89, 0, 255);
+}
+
+
+a {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  background-color: rgb(222, 241, 245);
+  border: none;
+  color: rgb(21, 64, 73);
+  padding: 5px 5px;
+  text-align: center;
+  font-size: 10px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 1
+}

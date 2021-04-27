@@ -1,0 +1,35 @@
+<!-- INTERPOLATION -->
+<div class="one">
+  <h3 *ngIf="amount>0">{{amount}} developer's photo. Today is {{imageDate | date: 'dd MMM yyyy'}}</h3>
+
+  <!-- PROPERTY BINDING -->
+  <img #imageMe src="/assets/images/me.jpg" [width]="imageWidth" alt="me" >
+
+  <!-- EVENT BINDING -->
+  <div class="box">
+    <label>
+      <input type="range" min="100" max="290" value="210" step="10" [(ngModel)]="imageWidth">
+    </label>
+    <br>
+    <div class="pos">
+      <button (click)="imageIncr()" style="font-size: x-large;font-weight: 700;">+</button>
+      <span>width:{{imageMe.width}}</span>
+      <button (click)="imageDecr()" style="font-size: x-large;font-weight: 700;"> - </button>
+    </div>
+    <button (click)="imageRes()" style="font-size: small;font-weight: 700;">Reset size</button>
+
+  </div>
+
+</div>
+<div class="two">
+  <!-- ATTRIBUTE DIRECTIVE -->
+  <h5>My Leaders:</h5>
+
+  <!-- STRUCTURAL DIRECTIVE -->
+  <p *ngIf="isWinter">Serhii Kalinichenko</p>
+  <p>Ranny Alberg</p>
+
+  <h5>Coding sites:</h5>
+  <p *ngFor="let s of sites">{{s}}</p>
+
+</div>

@@ -1,0 +1,45 @@
+<h2 class="titular" style="right: auto; line-grid: match-parent;">Update {{coupon.title}}</h2>
+<form #formInfo="ngForm" class="menu-box">
+  <input #titleInfo="ngModel" required pattern="^[A-Z].*$" type="text" [placeholder]="coupon.title" [(ngModel)]="coupon.title"
+         name="title">
+  <span style="position: absolute; top: 0;left: 8% " *ngIf="titleInfo.errors?.required && titleInfo.touched">Missing Title</span>
+  <span style="position: absolute; top: 0; left: 8%" *ngIf="titleInfo.errors?.pattern && titleInfo.touched">Title starts with a Cap-letter!</span>
+
+  <input #startDateInfo="ngModel" required type="text" placeholder="Start Date..." [(ngModel)]="coupon.startDate"
+         name="startDate">
+  <span style="position: absolute; top: 0;right: 8% "
+        *ngIf="!startDateInfo.valid && startDateInfo.touched">Missing Date</span>
+
+  <input #endDateInfo="ngModel" required type="text" placeholder="End Date..." [(ngModel)]="coupon.endDate"
+         name="endDate">
+  <span style="position: absolute; top: 27%;left: 8% "
+        *ngIf="!endDateInfo.valid && endDateInfo.touched">Missing Date</span>
+
+  <input #categoryInfo="ngModel" required type="number" placeholder="Category..." [(ngModel)]="coupon.category"
+         name="category">
+  <span style="position: absolute; top: 27%;right: 0 " *ngIf="!categoryInfo.valid && categoryInfo.touched">Missing Category</span>
+
+  <input #amountInfo="ngModel" required minlength="2" type="number" placeholder="Amount..." [(ngModel)]="coupon.amount"
+         name="amount">
+  <span style="position: absolute; top: 53%;left: 8% "
+        *ngIf="!amountInfo.valid && amountInfo.touched">Missing Amount</span>
+
+  <input #priceInfo="ngModel" required pattern="^[-]?[0-9]*[.]?[0-9]*$" min="0" max="1000" placeholder="Price..."
+         [(ngModel)]="coupon.price" name="price">
+  <span style="position: absolute; top: 53%;right: 7% " *ngIf="priceInfo.errors?.required && priceInfo.touched">Missing Price</span>
+  <span style="position: absolute; top: 53%;right: 7% " *ngIf="priceInfo.errors?.pattern && priceInfo.touched">Price must be a number</span>
+
+  <input #descriptionInfo="ngModel" required type="text" placeholder="Description..." [(ngModel)]="coupon.description"
+         name="description">
+  <span style="position: absolute; top: 78%;left: 8% " *ngIf="!descriptionInfo.valid && descriptionInfo.touched">Missing Description</span>
+
+  <input #imageURLInfo="ngModel" required type="text" placeholder="ImageURL..." [(ngModel)]="coupon.imageURL"
+         name="imageURL">
+  <span style="position: absolute; top: 78%;right: -2% " *ngIf="!imageURLInfo.valid && imageURLInfo.touched">Missing ImageURL</span>
+
+</form>
+<button [disabled]="!formInfo.form.valid"
+        (click)="updateCoupon()" routerLink="/company-account">UPDATE
+</button>
+<a routerLink="/company-account">
+  Back to All Coupons</a>

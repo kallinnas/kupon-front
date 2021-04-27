@@ -1,0 +1,61 @@
+<h3 class="greeting">Welcome to your account,</h3>
+<h3 class="cName">{{customer.firstName}}</h3>
+<h3 class="cLastN">{{customer.lastName}}</h3>
+
+<a class="cart" routerLink="/cart"><i class="fa fa-cart-arrow-down"></i> My Cart</a>
+
+<a class="coupon" routerLink="/customer-account">
+  <img src="assets/images/icons/ticket-alt-solid.svg" style="width: 15px">
+  My Kupons</a>
+
+<a class="up" routerLink="/customer-update"> <i class="fa fa-cogs"></i> Update My name</a>
+
+<button class="delC" (click)="deleteCustomer()">
+  <img src="assets/images/icons/trash.svg" style="width: 14px; height: 14px; margin-bottom: 4px"> Delete myself
+</button>
+
+<div class="cus">
+
+  <table *ngIf="cart">
+    <tr class="main">
+      <th>ID</th>
+      <th>Title</th>
+      <th>StartDate</th>
+      <th>EndDate</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Send</th>
+      <th>Use</th>
+    </tr>
+
+    <tr class="str" *ngFor="let coupon of cart | keyvalue">
+      <td><a routerLink="/coupon-details/{{coupon.value[0].id}}">{{coupon.value[0].id}}</a></td>
+      <td>{{coupon.value[0].title}}</td>
+      <td>{{coupon.value[0].startDate}}</td>
+      <td>{{coupon.value[0].endDate}}</td>
+      <td><a routerLink="/coupon-category/{{coupon.value[0].category}}">{{coupon.value[0].category}}</a></td>
+      <td>{{coupon.value[1]}}</td>
+      <td>{{coupon.value[0].price}}</td>
+      <td>{{coupon.value[0].description}}</td>
+      <td>
+        <img src="{{coupon.value[0].imageURL}}" width=80px; height="80px">
+
+      </td>
+      <td>
+        <button (click)=removeFromCart(coupon.value[0].id)
+                routerLink="/cart">
+          <i class="fa fa-times" style="font-size:30px;
+                color:lightblue;"></i></button>
+      </td>
+      <td>
+        <a (click)="buyCoupon(coupon.value[0].id)">
+          <i class="fab fa-amazon-pay" style="font-size:30px;
+                    color:lightblue;"></i></a>
+      </td>
+    </tr>
+  </table>
+
+</div>

@@ -1,0 +1,39 @@
+<div>
+
+  <table *ngIf="companies">
+    <tr>
+      <th>Company ID</th>
+      <th>Logo</th>
+      <th>Name</th>
+      <th>User ID</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Delete</th>
+      <th>Update</th>
+    </tr>
+
+    <tr *ngFor="let company of companies; let i=index" class="str">
+
+      <td>
+        <a routerLink="/admin-company-details/{{company.id}}">{{company?.id}}</a>
+      </td>
+
+      <td><img src="{{company?.imageURL}}"></td>
+      <td>{{company?.name}}</td>
+      <td>{{users[i]?.id}}</td>
+      <td>{{users[i]?.email}}</td>
+      <td>{{users[i]?.password}}</td>
+
+      <td>
+        <button (click)=deleteCompany(company.id)>
+          <i class="fa fa-times"></i></button>
+      </td>
+      <td>
+        <a (click)="deleteCompany(company.id)">
+          <i class="fa fa-pencil"></i></a>
+      </td>
+
+    </tr>
+  </table>
+
+</div>

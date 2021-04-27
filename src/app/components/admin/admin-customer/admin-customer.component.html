@@ -1,0 +1,9 @@
+<div *ngIf="customers" class="dws-wrapper">
+  <div class="flex-cont">
+    <div *ngFor="let customer of customers" class="imageBox">
+
+      <a routerLink="/admin-customer-details/{{customer.id}}">{{customer.firstName}}<br>{{customer.lastName}}</a>
+
+    </div>
+  </div>
+</div>

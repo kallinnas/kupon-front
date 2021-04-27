@@ -1,0 +1,41 @@
+<div class="cus">
+
+  <table *ngIf="coupons">
+    <tr class="main">
+      <th>ID</th>
+      <th>Title</th>
+      <th>StartDate</th>
+      <th>EndDate</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Delete</th>
+      <th>Update</th>
+    </tr>
+
+    <tr *ngFor="let coupon of coupons" class="str">
+      <td><a routerLink="/coupon-details/{{coupon.id}}">{{coupon.id}}</a></td>
+      <td>{{coupon.title}}</td>
+      <td>{{coupon.startDate}}</td>
+      <td>{{coupon.endDate}}</td>
+      <td><a routerLink="/coupon-category/{{coupon.category}}">{{coupon.category}}</a></td>
+      <td>{{coupon.amount}}</td>
+      <td>{{coupon.price}}</td>
+      <td>{{coupon.description}}</td>
+      <td>
+        <img src="{{coupon.imageURL}}" width=80px; height="80px">
+      </td>
+      <td>
+        <button (click)=deleteCoupon(coupon.id) routerLink="/admin-coupon">
+          <i class="fa fa-times" style="font-size:30px; color:lightblue;"></i></button>
+      </td>
+      <td>
+        <a routerLink="/admin-update-coupon" (click)="saveCouponID(coupon.id)">
+          <i class="fa fa-pencil" style="font-size:30px; color:lightblue;"></i></a>
+      </td>
+    </tr>
+  </table>
+
+</div>

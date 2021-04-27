@@ -1,0 +1,101 @@
+.root {
+  margin-top: 50px;
+  margin-left: 20%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+button,
+input,
+label {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em
+}
+
+.dws-form {
+  background-color: rgb(198, 115, 121, 0.7);
+  padding: 20px;
+  width: 33em;
+  height: 25em;
+  position: relative;
+  bottom: 50px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .4);
+}
+
+.dws-form input[type="text"],
+.dws-form input[type="password"] {
+  /*border: 0;*/
+  background: rgb(21, 64, 73, 0.25);
+  display: block;
+  margin: -10px;
+  border: 2px solid lightblue;
+  padding: 14px 10px;
+  width: 150px;
+  /*цвет текста внутри*/
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+
+/*расширение*/
+
+.dws-form input[type="text"]:focus,
+.dws-form input[type="password"]:focus {
+  width: 200px;
+  border-color: lightcoral;
+}
+
+.dws-form button {
+  /*border: 0;*/
+  background: none;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border: 2px solid lightblue;
+  padding: 14px 20px;
+  /*цвет текста внутри*/
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.dws-form button:hover {
+  background: rgb(0, 255, 170);
+}
+
+.dws-form h1 {
+  color: lightblue;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+}
+
+.dws-form h3 {
+  color: lightblue;
+  font-weight: 300;
+}
+
+.reg {
+  position: absolute;
+  /*top: 75%;*/
+  left: 5%;
+  margin-top: 15px;
+}
+
+.rg {
+  position: absolute;
+  /*top: 75%;*/
+  left: 38%;
+}
+
+.r {
+  position: absolute;
+  /*top: 75%;*/
+  left: 70%;
+}

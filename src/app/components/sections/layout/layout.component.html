@@ -1,0 +1,37 @@
+<section>
+
+  <header>
+    <app-header></app-header>
+  </header>
+
+  <nav>
+    <div>
+      <app-admin-menu *ngIf="modeS.clientType == modeS.ROLE_ADMIN"></app-admin-menu>
+      <app-customer-menu *ngIf="modeS.clientType == modeS.ROLE_CUSTOMER"></app-customer-menu>
+      <app-company-menu *ngIf="modeS.clientType == modeS.ROLE_COMPANY"></app-company-menu>
+      <app-menu *ngIf="modeS.clientType == modeS.ROLE_GUEST"></app-menu>
+    </div>
+  </nav>
+
+  <aside>
+    <div>
+      <app-login *ngIf="modeS.logStatus == modeS.LOGGED_OUT"></app-login>
+    </div>
+
+    <div>
+      <app-company-account-menu *ngIf="modeS.clientType == modeS.ROLE_COMPANY"></app-company-account-menu>
+    </div>
+    <div>
+      <app-admin-account-menu *ngIf="modeS.clientType == modeS.ROLE_ADMIN"></app-admin-account-menu>
+    </div>
+  </aside>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+
+</section>

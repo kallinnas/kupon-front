@@ -1,0 +1,14 @@
+<div *ngIf="companies" class="dws-wrapper">
+  <div class="flex-cont">
+    <div *ngFor="let company of companies" class="imageBox">
+
+      <img class="img" src="{{company.imageURL}}" alt="company-logo">
+
+      <a *ngIf="role == '1'" routerLink="/customer-company-details/{{company.id}}">{{company.name}}</a>
+      <a *ngIf="role == '2'" routerLink="/company-details/{{company.id}}">{{company.name}}</a>
+      <a *ngIf="role == '3'" routerLink="/admin-company-details/{{company.id}}">{{company.name}}</a>
+
+      <a *ngIf="role == '0'" routerLink="/reg">{{company.name}}</a>
+    </div>
+  </div>
+</div>

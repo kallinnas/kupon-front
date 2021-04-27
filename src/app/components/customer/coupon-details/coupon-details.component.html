@@ -1,0 +1,25 @@
+<div>
+  <img src="{{coupon?.imageURL}}" style=" width: 200px; height: 250px;">
+
+  <div class="container">
+    <h2>{{coupon?.title}}</h2>
+    <h3>Id: {{coupon?.id}}</h3>
+    <h3>Category: {{coupon?.category}}</h3>
+    <h3>Amount: {{coupon?.amount}}</h3>
+    <h3>Price: {{coupon?.price}}</h3>
+    <h3>Start: {{coupon?.startDate}}</h3>
+    <h3>End: {{coupon?.endDate}}</h3>
+    <h3>Description: {{coupon?.description}}</h3>
+    <button routerLink="/kupons">Back to Kupons</button>
+    <button routerLink="/coupon-category/{{coupon?.category}}">Same Category Kupons</button>
+  </div>
+</div>
+
+
+<button *ngIf="role == '1'" class="cart" (click)="addToCart()">
+  Add to cart
+</button>
+
+<button *ngIf="role == '2'" class="cart" (click)="deleteCoupon()">
+  Delete Kupon
+</button>

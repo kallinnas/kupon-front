@@ -1,0 +1,63 @@
+<h3 class="greeting">Welcome to your account,</h3>
+<h3 class="cName">{{customer.firstName}}</h3>
+<h3 class="cLastN">{{customer.lastName}}</h3>
+
+
+<a class="cart"  routerLink="/cart"><i class="fa fa-cart-arrow-down"></i> My Cart</a>
+
+<a class="coupon" routerLink="/customer-account">
+  <img src="assets/images/icons/ticket-alt-solid.svg" style="width: 15px">
+  My Kupons</a>
+
+<a class="up" routerLink="/customer-update"> <i class="fa fa-cogs"></i> Update My name</a>
+
+<button class="delC" (click)="deleteCustomer()" routerLink="logout">
+  <img src="assets/images/icons/trash.svg" style="width: 14px; height: 14px; margin-bottom: 4px"> Delete myself
+</button>
+
+<div class="cus">
+
+  <table *ngIf="cart">
+    <tr class="main">
+      <th>Image</th>
+      <th>ID</th>
+      <th>Title</th>
+      <th>StartDate</th>
+      <th>EndDate</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Remove</th>
+      <th>Buy  </th>
+    </tr>
+
+    <tr class="str" *ngFor="let c of cart | keyvalue">
+      <td>
+        <img src="{{c.value[0].imageURL}}" width=80px; height="80px">
+      </td>
+      <td><a routerLink="/coupon-details/{{c.value[0].id}}">{{c.value[0].id}}</a></td>
+      <td>{{c.value[0].title}}</td>
+      <td>{{c.value[0].startDate}}</td>
+      <td>{{c.value[0].endDate}}</td>
+      <td><a routerLink="/coupon-category/{{c.value[0].category}}">{{c.value[0].category}}</a></td>
+      <td>{{c.value[1]}}</td>
+      <td>{{c.value[0].price}}</td>
+      <td>{{c.value[0].description}}</td>
+
+      <td>
+        <button (click)=removeFromCart(c.value[0].id)
+                routerLink="/cart">
+          <i class="fa fa-times" style="font-size:30px;
+                color:lightblue;"></i></button>
+      </td>
+      <td>
+        <a (click)="buyCoupon(c.value[0].id)">
+          <img src="/assets/images/icons/pay.svg" alt="buy">
+          <i class="fab fa-cc-amazon-pay"  style="font-size:30px;
+                    color:lightblue;"></i></a>
+      </td>
+    </tr>
+  </table>
+
+</div>

@@ -1,0 +1,20 @@
+<div class="root">
+  <div class="dws-form">
+    <form action="" class="tab-form" id="form">
+
+      <h1>REGISTRATION</h1>
+      <h3>Welcome to registration service! To create new account insert your email and password:</h3>
+      <label>
+        <input type="text" placeholder="email..." [(ngModel)]="email" name="email">
+      </label>
+      <br>
+      <label>
+        <input type="text" placeholder="password..." [(ngModel)]="password" name="password">
+      </label>
+      <br>
+      <button class="rg" (click)="register(1)">Customer</button>
+      <button class="reg" (click)="register(2)">Company</button>
+      <button class="r" routerLink="logout">LogOut </button>
+    </form>
+  </div>
+</div>

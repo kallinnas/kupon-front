@@ -1,0 +1,59 @@
+<h1>Create Kupon</h1>
+
+<form #formInfo="ngForm">
+
+  <div>
+    <input #titleInfo="ngModel" required pattern="^[A-Z].*$" type="text" placeholder="Title..."
+           [(ngModel)]="coupon.title" name="title">
+    <span *ngIf="titleInfo.errors?.required && titleInfo.touched">Missing Title</span>
+    <span *ngIf="titleInfo.errors?.pattern && titleInfo.touched">Title starts with a Cap-letter!</span>
+  </div>
+
+  <div>
+    <input #categoryInfo="ngModel" required type="number" placeholder="Category..."
+           [(ngModel)]="coupon.category" name="category">
+    <span *ngIf="!categoryInfo.valid && categoryInfo.touched">Missing Category</span>
+  </div>
+
+  <div>
+    <input #startDateInfo="ngModel" required type="text" placeholder="Start Date..."
+           [(ngModel)]="coupon.startDate" name="startDate">
+    <span *ngIf="!startDateInfo.valid && startDateInfo.touched">Missing Date</span>
+  </div>
+
+  <div>
+    <input #endDateInfo="ngModel" required type="text" placeholder="End Date..."
+           [(ngModel)]="coupon.endDate" name="endDate">
+    <span *ngIf="!endDateInfo.valid && endDateInfo.touched">Missing Date</span>
+  </div>
+
+  <div>
+    <input #amountInfo="ngModel" required minlength="2" type="number" placeholder="Amount..."
+           [(ngModel)]="coupon.amount" name="amount">
+    <span *ngIf="!amountInfo.valid && amountInfo.touched">Missing Amount</span>
+  </div>
+
+  <div>
+    <input #priceInfo="ngModel" required pattern="^[-]?[0-9]*[.]?[0-9]*$" min="0" max="1000" placeholder="Price..."
+           [(ngModel)]="coupon.price" name="price">
+    <span *ngIf="priceInfo.errors?.required && priceInfo.touched">Missing Price</span>
+    <span *ngIf="priceInfo.errors?.pattern && priceInfo.touched">Price must be a number</span>
+  </div>
+
+  <div>
+    <input #descriptionInfo="ngModel" required type="text" placeholder="Description..." [(ngModel)]="coupon.description"
+           name="description">
+    <span *ngIf="!descriptionInfo.valid && descriptionInfo.touched">Missing Description</span>
+  </div>
+
+  <div>
+    <input #imageURLInfo="ngModel" required type="text" placeholder="ImageURL..." [(ngModel)]="coupon.imageURL"
+           name="imageURL">
+    <span *ngIf="!imageURLInfo.valid && imageURLInfo.touched">Missing ImageURL</span>
+  </div>
+</form>
+
+<button [disabled]="!formInfo.form.valid" (click)="createCoupon()"
+        routerLink="/company-account">CREATE
+</button>
+<button routerLink="/company-account">Back</button>

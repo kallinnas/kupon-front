@@ -1,0 +1,22 @@
+<div class="dws-wrapper" *ngIf="coupons">
+  <div class="flex-cont">
+    <div class="imageBox" *ngFor="let coupon of coupons">
+
+      <img class="logo" src="{{coupon.imageURL}}" width=200px; height="240px">
+
+      <div class="content">
+        <a class="h2" routerLink="/coupon-details/{{coupon.id}}">{{coupon.title}}</a>
+        <br>
+
+        <a class="h3" routerLink="/coupon-details/{{coupon.id}}">{{coupon.description}}</a>
+        <br>
+        <a class="p" routerLink="/coupon-category/{{coupon.category}}">category: {{coupon.category}}</a>
+        <br>
+        <h1>price: {{coupon.price}}</h1>
+        <h1>amount: {{coupon.amount}}</h1>
+        <h1>{{coupon.startDate}}</h1>
+        <h1>{{coupon.endDate}}</h1>
+      </div>
+    </div>
+  </div>
+</div>

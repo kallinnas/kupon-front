@@ -1,0 +1,44 @@
+<h2> {{company.name}} KUPONS</h2>
+
+<div class="cus">
+
+  <table *ngIf="coupons">
+    <tr class="main">
+      <th>ID</th>
+      <th>Image</th>
+      <th>Title</th>
+      <th>StartDate</th>
+      <th>EndDate</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Delete</th>
+      <th>Update</th>
+    </tr>
+
+    <tr *ngFor="let coupon of coupons" class="str">
+      <td><a routerLink="/coupon-details/{{coupon.id}}">{{coupon.id}}</a></td>
+      <td>
+        <img src="{{coupon.imageURL}}" width=80px; height="80px">
+      </td>
+      <td>{{coupon.title}}</td>
+      <td>{{coupon.startDate}}</td>
+      <td>{{coupon.endDate}}</td>
+      <td><a routerLink="/coupon-category/{{coupon.category}}">{{coupon.category}}</a></td>
+      <td>{{coupon.amount}}</td>
+      <td>{{coupon.price}}</td>
+      <td>{{coupon.description}}</td>
+      <td>
+        <button (click)=deleteCoupon(coupon.id) routerLinkActive="/company-account">
+        <i class="fa fa-times" style="font-size:30px;
+                color:lightblue;"></i></button></td>
+      <td>
+        <a routerLink="/coupon-update" (click)="saveCouponID(coupon.id)">
+          <i class="fa fa-pencil" style="font-size:30px;
+                    color:lightblue;"></i></a>
+      </td>
+    </tr>
+  </table>
+
+</div>
