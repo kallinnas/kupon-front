@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://kupon-server.herokuapp.com/app/'
+  baseUrl: 'https://kupon-server.herokuapp.com/api/'
 };
